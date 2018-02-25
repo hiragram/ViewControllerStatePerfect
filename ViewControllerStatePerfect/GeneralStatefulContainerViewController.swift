@@ -8,7 +8,7 @@
 
 import UIKit
 
-func uninitialized<T>(file: String = #file, line: Int = #line) -> T { fatalError(file: file, line: line) }
+func uninitialized<T>(file: StaticString = #file, line: UInt = #line) -> T { fatalError(file: file, line: line) }
 
 public final class GeneralStatefulContainerViewController: UIViewController, StatefulContainerViewController {
 
