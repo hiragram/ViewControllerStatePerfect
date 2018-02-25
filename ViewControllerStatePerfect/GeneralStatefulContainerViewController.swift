@@ -43,16 +43,6 @@ public final class GeneralStatefulContainerViewController: UIViewController, Sta
         addChildViewController(error)
         addChildViewController(loading)
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("GeneralStatefulViewController appeared")
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("GeneralStatefulViewController disappeared")
-    }
 }
 
 public enum GeneralViewControllerState {
