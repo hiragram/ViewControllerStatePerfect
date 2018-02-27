@@ -45,9 +45,20 @@ public final class GeneralStatefulContainerViewController: UIViewController, Sta
     }
 }
 
-public enum GeneralViewControllerState {
+public enum GeneralViewControllerState: Equatable {
     case noContent
     case contentAvailable
     case error(Error)
     case loading
+
+    public static func ==(lhs: GeneralViewControllerState, rhs: GeneralViewControllerState) -> Bool {
+        switch (lhs, rhs) {
+        case (.noContent, .noContent), (.contentAvailable, .contentAvailable), (.loading, .loading):
+            return true
+        case (.error(let rhsError), .error(let lhsError)):
+            return false // I haven't find proper way to check whether these errors are equal or not.
+        default:
+            return false
+        }
+    }
 }

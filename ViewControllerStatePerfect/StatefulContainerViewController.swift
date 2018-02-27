@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol StatefulContainerViewController: class where Self: UIViewController {
-    associatedtype State
+    associatedtype State: Equatable
 
     func set(state: State)
 
