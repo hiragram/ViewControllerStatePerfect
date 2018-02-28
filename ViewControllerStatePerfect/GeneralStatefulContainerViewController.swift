@@ -16,7 +16,7 @@ public final class GeneralStatefulContainerViewController: UIViewController, Sta
 
     private lazy var noContentViewController: UIViewController = uninitialized()
     private lazy var contentViewController: UIViewController = uninitialized()
-    private lazy var errorViewController: ErrorRepresentableViewController & UIViewController = uninitialized()
+    private lazy var errorViewController: UIViewController = uninitialized()
     private lazy var loadingViewController: UIViewController = uninitialized()
 
     public func get(viewControllerFor state: GeneralViewControllerState) -> UIViewController {
@@ -32,7 +32,7 @@ public final class GeneralStatefulContainerViewController: UIViewController, Sta
         }
     }
 
-    public func setViewControllersForStates(noContent: UIViewController, contentAvailable: UIViewController, error: ErrorRepresentableViewController & UIViewController, loading: UIViewController) {
+    public func setViewControllersForStates(noContent: UIViewController, contentAvailable: UIViewController, error: UIViewController, loading: UIViewController) {
         noContentViewController = noContent
         contentViewController = contentAvailable
         errorViewController = error
@@ -48,6 +48,6 @@ public final class GeneralStatefulContainerViewController: UIViewController, Sta
 public enum GeneralViewControllerState {
     case noContent
     case contentAvailable
-    case error(Error)
+    case error
     case loading
 }

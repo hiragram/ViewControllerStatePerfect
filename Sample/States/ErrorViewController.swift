@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import ViewControllerStatePerfect
 
-final class ErrorViewController: UIViewController, ErrorRepresentableViewController {
+final class ErrorViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("ErrorViewController appeared")
@@ -18,13 +17,5 @@ final class ErrorViewController: UIViewController, ErrorRepresentableViewControl
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         print("ErrorViewController disappeared")
-    }
-
-    func set(error: Error) {
-
-    }
-
-    func onRetry(block: @escaping () -> Void) {
-
     }
 }

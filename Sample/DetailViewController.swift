@@ -49,7 +49,7 @@ final class DetailViewController: UIViewController {
         container.set(state: .loading)
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
-            self.container.set(state: .contentAvailable)
+            self.container.set(state: .error)
         }
     }
 
